@@ -1,21 +1,25 @@
-function goldMine(data) {
+function goldMine(input) {
     let index = 0;
-    let locationsCount = Number(data[index]);
+    let locationsCount = Number(input[index]);
     index++;
-    let expectedIncome = Number(data[index]);
+    let expectedIncome = Number(input[index]);
     index++;
-    
+
 
     while (locationsCount > 0) {
         let income = 0;
-        let daysOnLocation = Number(data[index]);
+        let daysOnLocation = Number(input[index]);
         index++;
+        let dayCounter = 0;
 
-        for (let i = 1; i <= daysOnLocation; i++) {
-            let currIncome = Number(data[index]);
-            income += currIncome;
+
+        while (dayCounter < daysOnLocation) {
+            let currentIncome = Number(input[index])
+            income += currentIncome;
+            dayCounter++;
             index++;
         }
+
 
         let avgIncome = income / daysOnLocation;
         if (avgIncome >= expectedIncome) {
@@ -25,7 +29,7 @@ function goldMine(data) {
             console.log(`You need ${diff.toFixed(2)} gold.`)
         }
 
-        expectedIncome = Number(data[index]);
+        expectedIncome = Number(input[index]);
         index++;
 
         locationsCount--;
