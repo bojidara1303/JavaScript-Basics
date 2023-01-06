@@ -5,7 +5,6 @@ function goldMine(input) {
     let expectedIncome = Number(input[index]);
     index++;
 
-
     while (locationsCount > 0) {
         let income = 0;
         let daysOnLocation = Number(input[index]);
