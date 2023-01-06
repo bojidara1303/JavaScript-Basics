@@ -1,31 +1,31 @@
-function pastryShop(data) {
-    let type = data[0];
-    let count = Number(data[1]);
-    let day = Number(data[2]);
+function pastryShop(input) {
+    let typeSweet = input[0];
+    let countSweet = Number(input[1]);
+    let day = Number(input[2]);
     let price = 0;
 
-    switch (type) {
+    switch (typeSweet) {
         case 'Cake':
             if (day <= 15) {
-                price = 24 * count;
+                price = 24 * countSweet;
             } else if (day > 15) {
-                price = 28.70 * count;
+                price = 28.70 * countSweet;
             }
             break;
+
+            case 'Baklava':
+                if (day <= 15) {
+                    price = 12.60 * countSweet;
+                } else if (day > 15) {
+                    price = 16.98 * countSweet;
+                }
+                break;
 
         case 'Souffle':
             if (day <= 15) {
-                price = 6.66 * count;
+                price = 6.66 * countSweet;
             } else if (day > 15) {
-                price = 9.80 * count;
-            }
-            break;
-
-        case 'Baklava':
-            if (day <= 15) {
-                price = 12.60 * count;
-            } else if (day > 15) {
-                price = 16.98 * count;
+                price = 9.80 * countSweet;
             }
             break;
     }
